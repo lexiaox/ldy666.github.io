@@ -6,5 +6,6 @@
     "themeMode":"fix",
     "dayTheme":"dark",
     "nightTheme":"dark-blue",
-    "startSite":"09/22/2025"
+    "startSite":"09/22/2025",
+    "needComment":1
 }
