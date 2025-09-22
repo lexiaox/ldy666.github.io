@@ -1,6 +1,9 @@
 {
-    "title":"Blog Title",
-    "subTitle":"Blog description",
+    "title":"ldy666的blog",
+    "subTitle":"我思故我在",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
-    "GMEEK_VERSION":"last"
+    "GMEEK_VERSION":"last"，
+    "themeMode":"fix",
+    "dayTheme":"dark",
+    "nightTheme":"dark-blue"
 }
