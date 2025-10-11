@@ -1,5 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Sat, 11 Oct 2025 11:27:25 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>strcpy的用法</title><link>https://lexiaox.github.io/ldy666.github.io/post/strcpy-de-yong-fa.html</link><description># strcpy函数用法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Sat, 11 Oct 2025 11:28:09 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>strcmp函数用法</title><link>https://lexiaox.github.io/ldy666.github.io/post/strcmp-han-shu-yong-fa.html</link><description># strcmp函数用法
+
+## 函数原型
+```c
+int strcmp(const char *s1, const char *s2);
+```
+
+## 参数说明
+- `s1`：待比较的第一个字符串
+- `s2`：待比较的第二个字符串
+
+## 返回值
+- **0**：两个字符串相等
+- **负值**：`s1` 字典序小于 `s2`
+- **正值**：`s1` 字典序大于 `s2`
+
+## 示例代码
+```c
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str1[] = 'Hello';
+    char str2[] = 'hello';
+    int result = strcmp(str1, str2);
+    
+    if(result == 0) {
+        printf('字符串相等
+');
+    } else if(result &lt; 0) {
+        printf('str1 小于 str2
+');
+    } else {
+        printf('str1 大于 str2
+');
+    }
+    return 0;
+}
+```
+
+## 注意事项
+1. 严格区分大小写（'A' != 'a'）
+2. 遇到` `即终止比较
+3. 缓冲区必须以` `结尾
+4. 禁止直接比较指针地址
+以上内容由文心人工智能生成合成
+。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/strcmp-han-shu-yong-fa.html</guid><pubDate>Sat, 11 Oct 2025 11:27:43 +0000</pubDate></item><item><title>strcpy的用法</title><link>https://lexiaox.github.io/ldy666.github.io/post/strcpy-de-yong-fa.html</link><description># strcpy函数用法
 
 ## 函数原型
 ```c
