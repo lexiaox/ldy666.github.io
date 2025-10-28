@@ -1,5 +1,62 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Tue, 14 Oct 2025 09:32:53 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>C语言读入输出字符</title><link>https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</link><description>[getchar_putchar_guide.md](https://github.com/user-attachments/files/22901608/getchar_putchar_guide.md)。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</guid><pubDate>Tue, 14 Oct 2025 09:32:25 +0000</pubDate></item><item><title>2025/10/12 程序设计作业</title><link>https://lexiaox.github.io/ldy666.github.io/post/2025-10-12%20-cheng-xu-she-ji-zuo-ye.html</link><description>[320250901191 乐豆芽.docx](https://github.com/user-attachments/files/22869755/320250901191.docx)。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/2025-10-12%20-cheng-xu-she-ji-zuo-ye.html</guid><pubDate>Sun, 12 Oct 2025 07:16:44 +0000</pubDate></item><item><title>strcmp函数用法</title><link>https://lexiaox.github.io/ldy666.github.io/post/strcmp-han-shu-yong-fa.html</link><description># strcmp函数用法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Tue, 28 Oct 2025 11:59:47 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>C语言读入输出字符</title><link>https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</link><description># 🧩 C语言 `getchar()` 与 `putchar()` 用法简明笔记
+
+## 📘 1. 函数简介
+
+| 函数 | 功能 | 头文件 | 返回类型 |
+|------|------|---------|-----------|
+| `getchar()` | 从键盘读取一个字符 | `&lt;stdio.h&gt;` | `int`（返回字符的 ASCII 值） |
+| `putchar()` | 向屏幕输出一个字符 | `&lt;stdio.h&gt;` | `int`（返回输出的字符） |
+
+---
+
+## ⚙️ 2. 基本语法
+
+```c
+int getchar(void);
+int putchar(int c);
+```
+
+---
+
+## 🧠 3. 示例一：读取并输出字符
+
+```c
+#include &lt;stdio.h&gt;
+
+int main() {
+    int ch;
+    printf('请输入一个字符：');
+    ch = getchar();      // 从键盘读入一个字符
+    printf('你输入的是：');
+    putchar(ch);         // 输出该字符
+    putchar('\n');
+    return 0;
+}
+```
+
+---
+
+## 💡 4. 示例二：连续读取并回显
+
+```c
+#include &lt;stdio.h&gt;
+
+int main() {
+    int c;
+    printf('请输入一行文字（回车结束）：\n');
+    while ((c = getchar()) != '\n') {  // 逐字符读取直到换行
+        putchar(c);                    // 立即输出
+    }
+    return 0;
+}
+```
+
+---
+
+## ⚠️ 5. 注意事项
+
+- `getchar()` **会读取空格和换行符**。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</guid><pubDate>Tue, 14 Oct 2025 09:32:25 +0000</pubDate></item><item><title>2025/10/12 程序设计作业</title><link>https://lexiaox.github.io/ldy666.github.io/post/2025-10-12%20-cheng-xu-she-ji-zuo-ye.html</link><description>[320250901191 乐豆芽.docx](https://github.com/user-attachments/files/22869755/320250901191.docx)。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/2025-10-12%20-cheng-xu-she-ji-zuo-ye.html</guid><pubDate>Sun, 12 Oct 2025 07:16:44 +0000</pubDate></item><item><title>strcmp函数用法</title><link>https://lexiaox.github.io/ldy666.github.io/post/strcmp-han-shu-yong-fa.html</link><description># strcmp函数用法
 
 ## 函数原型
 ```c
