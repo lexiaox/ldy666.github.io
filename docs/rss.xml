@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Mon, 03 Nov 2025 06:44:03 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>C语言读入输出字符</title><link>https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</link><description># 🧩 C语言 `getchar()` 与 `putchar()` 用法简明笔记
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>ldy666的blog</title><link>https://lexiaox.github.io/ldy666.github.io</link><description>我思故我在</description><copyright>ldy666的blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg</url><title>avatar</title><link>https://lexiaox.github.io/ldy666.github.io</link></image><lastBuildDate>Mon, 03 Nov 2025 06:45:39 +0000</lastBuildDate><managingEditor>ldy666的blog</managingEditor><ttl>60</ttl><webMaster>ldy666的blog</webMaster><item><title>C语言读入输出字符</title><link>https://lexiaox.github.io/ldy666.github.io/post/C-yu-yan-du-ru-shu-chu-zi-fu.html</link><description># 🧩 C语言 `getchar()` 与 `putchar()` 用法简明笔记
 
 ## 📘 1. 函数简介
 
@@ -141,33 +141,31 @@ int main() {
 3. 源字符串不能为NULL
 4. 推荐使用`strncpy`+手动添加终止符
 以上内容由文心人工智能生成合成
-。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/strcpy-de-yong-fa.html</guid><pubDate>Sat, 11 Oct 2025 11:26:21 +0000</pubDate></item><item><title>初始化数组</title><link>https://lexiaox.github.io/ldy666.github.io/post/chu-shi-hua-shu-zu.html</link><description>#memset( 数组名, -1, sizeof( 数组名));
-##函数原型
+。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/strcpy-de-yong-fa.html</guid><pubDate>Sat, 11 Oct 2025 11:26:21 +0000</pubDate></item><item><title>初始化数组</title><link>https://lexiaox.github.io/ldy666.github.io/post/chu-shi-hua-shu-zu.html</link><description># C语言示例
 
-···c
-
-void *memset(void *str, int c, size_t n);
-
-
-
-- str: 要填充的内存块的指针
-- c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）
-- n: 要设置的字节数
-
-
-##具体作用
+## 代码演示
 
 ```c
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
 
-int arr[100];
-memset(arr, 0, sizeof(arr));
+int main() {
+    int arr[5];
+    
+    // 使用memset初始化数组
+    memset(arr, -1, sizeof(arr));
+    
+    // 输出数组元素
+    for(int i = 0; i &lt; 5; i++) {
+        printf('arr[%d] = %d\n', i, arr[i]);
+    }
+    
+    return 0;
+}
+```
 
-
-这行代码将：
-
-arr 数组的 100 * sizeof(int) 个字节全部设置为0
-
-相当于将数组的所有元素初始化为0。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/chu-shi-hua-shu-zu.html</guid><pubDate>Wed, 08 Oct 2025 12:22:14 +0000</pubDate></item><item><title>快速读入读出</title><link>https://lexiaox.github.io/ldy666.github.io/post/kuai-su-du-ru-du-chu.html</link><description>ios::sync_with_stdio(false);
+## 编译命令
+使用 `gcc -o program program.c` 编译上述代码。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/chu-shi-hua-shu-zu.html</guid><pubDate>Wed, 08 Oct 2025 12:22:14 +0000</pubDate></item><item><title>快速读入读出</title><link>https://lexiaox.github.io/ldy666.github.io/post/kuai-su-du-ru-du-chu.html</link><description>ios::sync_with_stdio(false);
 cin.tie(0);。</description><guid isPermaLink="true">https://lexiaox.github.io/ldy666.github.io/post/kuai-su-du-ru-du-chu.html</guid><pubDate>Mon, 06 Oct 2025 08:42:12 +0000</pubDate></item><item><title>头文件</title><link>https://lexiaox.github.io/ldy666.github.io/post/tou-wen-jian.html</link><description>#include&lt;bits/stdc++.h&gt;
 #include&lt;stdio.h&gt;
 #include&lt;stdlib.h&gt;
