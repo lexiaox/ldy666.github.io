@@ -14,12 +14,12 @@
 
 void *memset(void *str, int c, size_t n);
 
-```
+
 
 - str: 要填充的内存块的指针
 - c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）
 - n: 要设置的字节数
-···
+
 
 ##具体作用
 
@@ -28,7 +28,6 @@ void *memset(void *str, int c, size_t n);
 int arr[100];
 memset(arr, 0, sizeof(arr));
 
-```
 
 这行代码将：
 
@@ -43,12 +42,12 @@ arr 数组的 100 * sizeof(int) 个字节全部设置为0
 
 void *memset(void *str, int c, size_t n);
 
-```
+
 
 - str: 要填充的内存块的指针
 - c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）
 - n: 要设置的字节数
-···
+
 
 ##具体作用
 
@@ -57,7 +56,6 @@ void *memset(void *str, int c, size_t n);
 int arr[100];
 memset(arr, 0, sizeof(arr));
 
-```
 
 这行代码将：
 
@@ -68,7 +66,7 @@ arr 数组的 100 * sizeof(int) 个字节全部设置为0
 <meta property="og:url" content="https://lexiaox.github.io/ldy666.github.io/post/chu-shi-hua-shu-zu.html">
 <meta property="og:image" content="https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg">
 <title>初始化数组</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -138,23 +136,21 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 ##函数原型</p>
 <p>···c</p>
 <p>void *memset(void *str, int c, size_t n);</p>
-<pre class="notranslate"><code class="notranslate">
-- str: 要填充的内存块的指针
-- c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）
-- n: 要设置的字节数
-···
+<ul>
+<li>str: 要填充的内存块的指针</li>
+<li>c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）</li>
+<li>n: 要设置的字节数</li>
+</ul>
+<p>##具体作用</p>
+<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">int</span> <span class="pl-s1">arr</span>[<span class="pl-c1">100</span>];
+<span class="pl-en">memset</span>(<span class="pl-s1">arr</span>, <span class="pl-c1">0</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">arr</span>));
 
-##具体作用
 
-```c
+<span class="pl-smi">这行代码将</span>：
 
-int arr[100];
-memset(arr, 0, sizeof(arr));
+<span class="pl-s1">arr</span> <span class="pl-s1">数组的</span> <span class="pl-c1">100</span> <span class="pl-c1">*</span> <span class="pl-en">sizeof</span>(<span class="pl-smi">int</span>) <span class="pl-s1">个字节全部设置为0</span>
 
-</code></pre>
-<p>这行代码将：</p>
-<p>arr 数组的 100 * sizeof(int) 个字节全部设置为0</p>
-<p>相当于将数组的所有元素初始化为0</p></div>
+<span class="pl-s1">相当于将数组的所有元素初始化为0</span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
