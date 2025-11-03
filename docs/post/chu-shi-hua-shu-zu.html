@@ -10,7 +10,8 @@
 <meta name="description" content="#memset( 数组名, -1, sizeof( 数组名));
 ##函数原型
 
-···c
+···
+
 void *memset(void *str, int c, size_t n);
 
 ```
@@ -21,7 +22,7 @@ void *memset(void *str, int c, size_t n);
 
 ##具体作用
 
-```c
+```
 int arr[100];
 memset(arr, 0, sizeof(arr));
 ```
@@ -35,7 +36,8 @@ arr 数组的 100 * sizeof(int) 个字节全部设置为0
 <meta property="og:description" content="#memset( 数组名, -1, sizeof( 数组名));
 ##函数原型
 
-···c
+···
+
 void *memset(void *str, int c, size_t n);
 
 ```
@@ -46,7 +48,7 @@ void *memset(void *str, int c, size_t n);
 
 ##具体作用
 
-```c
+```
 int arr[100];
 memset(arr, 0, sizeof(arr));
 ```
@@ -128,8 +130,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><p>#memset( 数组名, -1, sizeof( 数组名));<br>
 ##函数原型</p>
-<p>···c<br>
-void *memset(void *str, int c, size_t n);</p>
+<p>···</p>
+<p>void *memset(void *str, int c, size_t n);</p>
 <pre class="notranslate"><code class="notranslate">
 - str: 要填充的内存块的指针
 - c: 要设置的值（以int形式传递，但实际使用每个字节的低8位）
@@ -137,13 +139,16 @@ void *memset(void *str, int c, size_t n);</p>
 
 ##具体作用
 
-```c
-int arr[100];
-memset(arr, 0, sizeof(arr));
 </code></pre>
-<p>这行代码将：</p>
-<p>arr 数组的 100 * sizeof(int) 个字节全部设置为0</p>
-<p>相当于将数组的所有元素初始化为0</p></div>
+<p>int arr[100];<br>
+memset(arr, 0, sizeof(arr));</p>
+<pre class="notranslate"><code class="notranslate">
+这行代码将：
+
+arr 数组的 100 * sizeof(int) 个字节全部设置为0
+
+相当于将数组的所有元素初始化为0
+</code></pre></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
