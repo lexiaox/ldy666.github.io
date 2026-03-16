@@ -26,7 +26,7 @@
 <meta property="og:url" content="https://lexiaox.github.io/ldy666.github.io/post/c-wen-ben-du-ru-du-chu.html">
 <meta property="og:image" content="https://q2.itc.cn/q_70/images03/20250225/e8117dd40aae4db5a64461f1ea0d16fc.jpeg">
 <title>c文本读入读出</title>
-<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
 
 
 </head>
@@ -108,11 +108,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ol>
 <li>
 <p><strong>定义文件指针</strong></p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span>;</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">FILE *fp;
+</code></pre>
 </li>
 <li>
 <p><strong>打开文件</strong></p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"文件名"</span>, <span class="pl-s">"模式"</span>);</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">fp = fopen("文件名", "模式");
+</code></pre>
 </li>
 <li>
 <p><strong>读写文件</strong></p>
@@ -127,7 +129,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </li>
 <li>
 <p><strong>关闭文件</strong></p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">fclose(fp);
+</code></pre>
 </li>
 </ol>
 <hr>
@@ -173,22 +176,23 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h2>三、文本文件的读写</h2>
 <h3>📖 写入文本文件</h3>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include &lt;stdio.h&gt;
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>() {
-    <span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"output.txt"</span>, <span class="pl-s">"w"</span>);
-    <span class="pl-k">if</span> (!<span class="pl-s1">fp</span>) {
-        <span class="pl-en">printf</span>(<span class="pl-s">"打开文件失败！\n"</span>);
-        <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+int main() {
+    FILE *fp = fopen("output.txt", "w");
+    if (!fp) {
+        printf("打开文件失败！\n");
+        return 1;
     }
 
-    <span class="pl-en">fprintf</span>(<span class="pl-s1">fp</span>, <span class="pl-s">"Hello, world!\n"</span>);
-    <span class="pl-en">fprintf</span>(<span class="pl-s1">fp</span>, <span class="pl-s">"数字：%d\n"</span>, <span class="pl-c1">123</span>);
-    <span class="pl-en">fputs</span>(<span class="pl-s">"这是另一行文字。\n"</span>, <span class="pl-s1">fp</span>);
+    fprintf(fp, "Hello, world!\n");
+    fprintf(fp, "数字：%d\n", 123);
+    fputs("这是另一行文字。\n", fp);
 
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div>
+    fclose(fp);
+    return 0;
+}
+</code></pre>
 <p>📘 <strong>说明</strong></p>
 <ul>
 <li>
@@ -200,23 +204,24 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </ul>
 <hr>
 <h3>📥 读取文本文件</h3>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include &lt;stdio.h&gt;
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>() {
-    <span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"output.txt"</span>, <span class="pl-s">"r"</span>);
-    <span class="pl-k">if</span> (!<span class="pl-s1">fp</span>) {
-        <span class="pl-en">printf</span>(<span class="pl-s">"文件打开失败！\n"</span>);
-        <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+int main() {
+    FILE *fp = fopen("output.txt", "r");
+    if (!fp) {
+        printf("文件打开失败！\n");
+        return 1;
     }
 
-    <span class="pl-smi">char</span> <span class="pl-s1">line</span>[<span class="pl-c1">100</span>];
-    <span class="pl-k">while</span> (<span class="pl-en">fgets</span>(<span class="pl-s1">line</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">line</span>), <span class="pl-s1">fp</span>)) { <span class="pl-c">// 一次读一行</span>
-        <span class="pl-en">printf</span>(<span class="pl-s">"%s"</span>, <span class="pl-s1">line</span>);
+    char line[100];
+    while (fgets(line, sizeof(line), fp)) { // 一次读一行
+        printf("%s", line);
     }
 
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div>
+    fclose(fp);
+    return 0;
+}
+</code></pre>
 <p>📘 <strong>说明</strong></p>
 <ul>
 <li>
@@ -234,69 +239,72 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>二进制文件保存的是<strong>原始内存数据</strong>，速度快，不可直接用文本编辑器查看。</p>
 <hr>
 <h3>💾 写入二进制文件（<code class="notranslate">fwrite</code>）</h3>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include &lt;stdio.h&gt;
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>() {
-    <span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"data.bin"</span>, <span class="pl-s">"wb"</span>);  <span class="pl-c">// 以二进制方式写入</span>
-    <span class="pl-k">if</span> (!<span class="pl-s1">fp</span>) {
-        <span class="pl-en">printf</span>(<span class="pl-s">"打开文件失败！\n"</span>);
-        <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+int main() {
+    FILE *fp = fopen("data.bin", "wb");  // 以二进制方式写入
+    if (!fp) {
+        printf("打开文件失败！\n");
+        return 1;
     }
 
-    <span class="pl-smi">int</span> <span class="pl-s1">nums</span>[] <span class="pl-c1">=</span> {<span class="pl-c1">10</span>, <span class="pl-c1">20</span>, <span class="pl-c1">30</span>, <span class="pl-c1">40</span>, <span class="pl-c1">50</span>};
-    <span class="pl-en">fwrite</span>(<span class="pl-s1">nums</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>), <span class="pl-c1">5</span>, <span class="pl-s1">fp</span>);  <span class="pl-c">// 写入5个int</span>
+    int nums[] = {10, 20, 30, 40, 50};
+    fwrite(nums, sizeof(int), 5, fp);  // 写入5个int
 
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div>
+    fclose(fp);
+    return 0;
+}
+</code></pre>
 <hr>
 <h3>💾 读取二进制文件（<code class="notranslate">fread</code>）</h3>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include &lt;stdio.h&gt;
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>() {
-    <span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"data.bin"</span>, <span class="pl-s">"rb"</span>);  <span class="pl-c">// 以二进制方式读取</span>
-    <span class="pl-k">if</span> (!<span class="pl-s1">fp</span>) {
-        <span class="pl-en">printf</span>(<span class="pl-s">"打开文件失败！\n"</span>);
-        <span class="pl-k">return</span> <span class="pl-c1">1</span>;
+int main() {
+    FILE *fp = fopen("data.bin", "rb");  // 以二进制方式读取
+    if (!fp) {
+        printf("打开文件失败！\n");
+        return 1;
     }
 
-    <span class="pl-smi">int</span> <span class="pl-s1">nums</span>[<span class="pl-c1">5</span>];
-    <span class="pl-en">fread</span>(<span class="pl-s1">nums</span>, <span class="pl-k">sizeof</span>(<span class="pl-smi">int</span>), <span class="pl-c1">5</span>, <span class="pl-s1">fp</span>);  <span class="pl-c">// 从文件读取5个int</span>
+    int nums[5];
+    fread(nums, sizeof(int), 5, fp);  // 从文件读取5个int
 
-    <span class="pl-k">for</span> (<span class="pl-smi">int</span> <span class="pl-s1">i</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>; <span class="pl-s1">i</span> <span class="pl-c1">&lt;</span> <span class="pl-c1">5</span>; <span class="pl-s1">i</span><span class="pl-c1">++</span>) {
-        <span class="pl-en">printf</span>(<span class="pl-s">"nums[%d] = %d\n"</span>, <span class="pl-s1">i</span>, <span class="pl-s1">nums</span>[<span class="pl-s1">i</span>]);
+    for (int i = 0; i &lt; 5; i++) {
+        printf("nums[%d] = %d\n", i, nums[i]);
     }
 
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div>
+    fclose(fp);
+    return 0;
+}
+</code></pre>
 <hr>
 <h2>五、读写结构体的例子（重点）</h2>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">#include</span> <span class="pl-s">&lt;stdio.h&gt;</span>
+<pre lang="c" class="notranslate"><code class="notranslate">#include &lt;stdio.h&gt;
 
-<span class="pl-k">typedef</span> <span class="pl-k">struct</span> {
-    <span class="pl-smi">char</span> <span class="pl-c1">name</span>[<span class="pl-c1">20</span>];
-    <span class="pl-smi">int</span> <span class="pl-c1">age</span>;
-    <span class="pl-smi">double</span> <span class="pl-c1">score</span>;
-} <span class="pl-smi">Student</span>;
+typedef struct {
+    char name[20];
+    int age;
+    double score;
+} Student;
 
-<span class="pl-smi">int</span> <span class="pl-en">main</span>() {
-    <span class="pl-smi">Student</span> <span class="pl-s1">stu1</span> <span class="pl-c1">=</span> {<span class="pl-s">"Alice"</span>, <span class="pl-c1">20</span>, <span class="pl-c1">95.5</span>};
-    <span class="pl-smi">Student</span> <span class="pl-s1">stu2</span>;
+int main() {
+    Student stu1 = {"Alice", 20, 95.5};
+    Student stu2;
 
-    <span class="pl-c">// 写入</span>
-    <span class="pl-smi">FILE</span> <span class="pl-c1">*</span><span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"student.bin"</span>, <span class="pl-s">"wb"</span>);
-    <span class="pl-en">fwrite</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">stu1</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">Student</span>), <span class="pl-c1">1</span>, <span class="pl-s1">fp</span>);
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
+    // 写入
+    FILE *fp = fopen("student.bin", "wb");
+    fwrite(&amp;stu1, sizeof(Student), 1, fp);
+    fclose(fp);
 
-    <span class="pl-c">// 读取</span>
-    <span class="pl-s1">fp</span> <span class="pl-c1">=</span> <span class="pl-en">fopen</span>(<span class="pl-s">"student.bin"</span>, <span class="pl-s">"rb"</span>);
-    <span class="pl-en">fread</span>(<span class="pl-c1">&amp;</span><span class="pl-s1">stu2</span>, <span class="pl-k">sizeof</span>(<span class="pl-s1">Student</span>), <span class="pl-c1">1</span>, <span class="pl-s1">fp</span>);
-    <span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);
+    // 读取
+    fp = fopen("student.bin", "rb");
+    fread(&amp;stu2, sizeof(Student), 1, fp);
+    fclose(fp);
 
-    <span class="pl-en">printf</span>(<span class="pl-s">"姓名: %s\n年龄: %d\n分数: %.1f\n"</span>, <span class="pl-s1">stu2</span>.<span class="pl-c1">name</span>, <span class="pl-s1">stu2</span>.<span class="pl-c1">age</span>, <span class="pl-s1">stu2</span>.<span class="pl-c1">score</span>);
-    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
-}</pre></div>
+    printf("姓名: %s\n年龄: %d\n分数: %.1f\n", stu2.name, stu2.age, stu2.score);
+    return 0;
+}
+</code></pre>
 <p>🧠 这种方法常用于保存游戏存档、数据库记录、配置文件等。</p>
 <hr>
 <h2>六、文本 vs 二进制 文件对比总结</h2>
@@ -346,15 +354,18 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li>
 <p>判断文件是否打开成功：</p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">if</span> (<span class="pl-s1">fp</span> <span class="pl-c1">==</span> <span class="pl-c1">NULL</span>) { ... }</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">if (fp == NULL) { ... }
+</code></pre>
 </li>
 <li>
 <p>判断是否到达文件结尾：</p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-k">while</span> (!<span class="pl-en">feof</span>(<span class="pl-s1">fp</span>)) { ... }</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">while (!feof(fp)) { ... }
+</code></pre>
 </li>
 <li>
 <p>关闭文件（一定要）：</p>
-<div class="highlight highlight-source-c"><pre class="notranslate"><span class="pl-en">fclose</span>(<span class="pl-s1">fp</span>);</pre></div>
+<pre lang="c" class="notranslate"><code class="notranslate">fclose(fp);
+</code></pre>
 </li>
 </ul>
 <hr>
